@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoriesController;
+use App\Http\Controllers\Dashboard\MedicamentoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}) -> name('home');
+
+Route::resource('medicamento', MedicamentoController::class);
+Route::resource('category', CategoriesController::class);
