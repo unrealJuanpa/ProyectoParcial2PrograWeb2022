@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Login;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class DashboardClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        echo view('dashboard.login.index');
+        echo view('dashboard.menus.dashcliente');
     }
 
     /**
@@ -25,7 +25,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -36,26 +36,16 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->all()['username'] == "Admin" && $request->all()['password'] == "pepian") {
-            return view('dashboard.menus.dashcliente');//echo view('dashboard.misc.index'
-        }
-        else {
-            if ($request->all()['username'] == "Cliente" && $request->all()['password'] == "pizza") {
-                return view('dashboard.vistausuario.index');
-            }
-        }
-
-        return back()->with('status', 'Usuario o Contraseñia incorrectos!');
-        // aqui se cargan los datos de la tabla
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Login  $login
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Login $login)
+    public function show(Post $post)
     {
         //
     }
@@ -63,10 +53,10 @@ class LoginController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Login  $login
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Login $login)
+    public function edit(Post $post)
     {
         //
     }
@@ -75,10 +65,10 @@ class LoginController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Login  $login
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Login $login)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -86,10 +76,10 @@ class LoginController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Login  $login
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Login $login)
+    public function destroy(Post $post)
     {
         //
     }

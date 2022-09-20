@@ -12,7 +12,7 @@
     <title>Login</title>
 </head>
 <body> 
-    @include('dashboard.partials.nav-header-main')
+    @include('dashboard.partials.nav-header-back')
     <form action="{{route('login.store')}}" method='post' class="form-register">
         
 
@@ -37,7 +37,7 @@
         <input class="controls" type="text" name="username" value="{{old('username')}}" id="username" placeholder="Nombre de usuario">
 
         <label for="">Password</label>
-        <input class="controls" type="text" name="password" value="{{old('password')}}" id="manufacturer" placeholder="Fabricante">
+        <input class="controls" type="password" name="password" value="{{old('password')}}" id="manufacturer" placeholder="Fabricante">
 
         <button type='submit' class="botons">Validar</button>
 
