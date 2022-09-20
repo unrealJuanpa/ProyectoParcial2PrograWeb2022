@@ -36,16 +36,37 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->all()['username'] == "Admin" && $request->all()['password'] == "pepian") {
-            return view('dashboard.menus.dashadmin');//echo view('dashboard.misc.index'
-        }
-        else {
-            if ($request->all()['username'] == "Cliente" && $request->all()['password'] == "pizza") {
-                return view('dashboard.menus.dashcliente');
+
+        $logins=Login::all();
+        //dd($logins[0]['username']);
+
+        for ($i = 0; $i < count($logins->all()); $i++ ) {
+            if ($logins[$i]['username'] == $request->all()['username'] && $logins[$i]['password'] == $request->all()['password']) {
+                if ($logins[$i]['is_admin'] == 1) {
+                    return view('dashboard.vistaadmin.index');
+                    break;
+                }
+                else {
+                    if ($logins[$i]['is_admin'] == 0) {
+                        return view('dashboard.vistausuario.index');
+                        break;
+                    }
+                }
             }
         }
 
-        return back()->with('status', 'Usuario o Contraseñia incorrectos!');
+        /*
+        if ($request->all()['username'] == "usuario1" && $request->all()['password'] == "pepian") {
+            //echo view('dashboard.misc.index'
+        }
+        else {
+            if ($request->all()['username'] == "usuario2" && $request->all()['password'] == "pizza") {
+                return view('dashboard.vistausuario.index');
+            }
+        }
+        */
+
+        return back()->with('status', 'Usuario o contrasenia incorrectos!');
         // aqui se cargan los datos de la tabla
     }
 
