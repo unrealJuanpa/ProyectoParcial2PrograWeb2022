@@ -1,0 +1,7 @@
+administrador
+  - username: usuario1
+  - password: pepian
+  
+cliente
+  - username: usuario2
+  - password: pizza
