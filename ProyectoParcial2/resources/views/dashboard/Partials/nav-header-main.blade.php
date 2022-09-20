@@ -24,7 +24,7 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="{{route('misc.index')}}">Ver Miscelaneos</a></li>
-                    <li><a class="dropdown-item" href="#">Crear Miscelaneos</a></li>
+                    <li><a class="dropdown-item" href="{{route('misc.create')}}">Crear Miscelaneos</a></li>
                   </ul>
                 </li>
               </ul>

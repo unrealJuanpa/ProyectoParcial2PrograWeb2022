@@ -36,10 +36,10 @@ class MiscController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMiscPost $request)
     {
         Misc::create($request->validated());
-        return back()->with('status','Medicamento Creado');
+        return back()->with('status','Miscelaneo Creado');
     }
 
     /**
