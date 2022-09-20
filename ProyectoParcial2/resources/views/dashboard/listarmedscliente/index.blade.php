@@ -12,7 +12,7 @@
     <title>Listar Medicamentos</title>
 </head>
 <body>
-    @include('dashboard.partials.nav-header-main')
+    @include('dashboard.partials.nav-header-dashcliente')
     <br><br><br>
     <div class="container">
         <br><br>

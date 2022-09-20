@@ -37,11 +37,11 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         if ($request->all()['username'] == "Admin" && $request->all()['password'] == "pepian") {
-            return view('dashboard.menus.dashcliente');//echo view('dashboard.misc.index'
+            return view('dashboard.menus.dashadmin');//echo view('dashboard.misc.index'
         }
         else {
             if ($request->all()['username'] == "Cliente" && $request->all()['password'] == "pizza") {
-                return view('dashboard.vistausuario.index');
+                return view('dashboard.menus.dashcliente');
             }
         }
 

@@ -27,6 +27,9 @@
                     <li><a class="dropdown-item" href="{{route('misc.create')}}">Crear Miscelaneos</a></li>
                   </ul>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{route('login.index')}}">LogOut</a>
+                </li>
               </ul>
             </div>
           </div>
