@@ -1,7 +1,7 @@
 administrador
-  - username: usuario1
+    - username: Admin
   - password: pepian
   
 cliente
-  - username: usuario2
+  - username: Cliente
   - password: pizza
