@@ -43,12 +43,12 @@ class LoginController extends Controller
         for ($i = 0; $i < count($logins->all()); $i++ ) {
             if ($logins[$i]['username'] == $request->all()['username'] && $logins[$i]['password'] == $request->all()['password']) {
                 if ($logins[$i]['is_admin'] == 1) {
-                    return view('dashboard.vistaadmin.index');
+                    return view('dashboard.menus.dashadmin');
                     break;
                 }
                 else {
                     if ($logins[$i]['is_admin'] == 0) {
-                        return view('dashboard.vistausuario.index');
+                        return view('dashboard.menus.dashcliente');
                         break;
                     }
                 }

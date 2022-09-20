@@ -21,8 +21,8 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::statement("INSERT INTO logins VALUES(1, 'usuario1', 'pepian', 1, '2022-9-20', '2022-9-20')");
-        DB::statement("INSERT INTO logins VALUES(2, 'usuario2', 'pizza', 0, '2022-9-20', '2022-9-20')");
+        DB::statement("INSERT INTO logins VALUES(1, 'Admin', 'pepian', 1, '2022-9-20', '2022-9-20')");
+        DB::statement("INSERT INTO logins VALUES(2, 'Cliente', 'pizza', 0, '2022-9-20', '2022-9-20')");
     }
 
     /**
