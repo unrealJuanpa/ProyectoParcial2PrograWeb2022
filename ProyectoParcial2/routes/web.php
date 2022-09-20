@@ -5,6 +5,8 @@ use App\Http\Controllers\Dashboard\MedicamentoController;
 use App\Http\Controllers\Dashboard\MiscController;
 use App\Http\Controllers\Dashboard\ListarmedsclienteController;
 use App\Http\Controllers\Dashboard\ListarmiscclienteConstroller;
+use App\Http\Controllers\Dashboard\LoginController;
+use App\Http\Controllers\Dashboard\VistausuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +29,5 @@ Route::resource('category', CategoriesController::class);
 Route::resource('misc', MiscController::class);
 Route::resource('listarmedscliente', ListarmedsclienteController::class);
 Route::resource('listarmisccliente', ListarmiscclienteConstroller::class);
+Route::resource('login', LoginController::class);
+Route::resource('vistausuario', VistausuarioController::class);
