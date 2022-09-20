@@ -50,7 +50,7 @@ class MiscController extends Controller
      */
     public function show(Misc $misc)
     {
-        //
+        echo view('dashboard.misc.show', ["misc"=>$misc]);
     }
 
     /**
@@ -61,7 +61,7 @@ class MiscController extends Controller
      */
     public function edit(Misc $misc)
     {
-        //
+        echo view('dashboard.misc.edit', ["misc"=>$misc]);
     }
 
     /**
@@ -71,9 +71,10 @@ class MiscController extends Controller
      * @param  \App\Models\Misc  $misc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Misc $misc)
+    public function update(StoreMiscPost $request, Misc $misc)
     {
-        //
+        $misc->update($request->validated());
+        return back()->with('status','Miscelaneo Actualizado');
     }
 
     /**
@@ -84,6 +85,7 @@ class MiscController extends Controller
      */
     public function destroy(Misc $misc)
     {
-        //
+        $misc->delete();
+        return back()->with('status','Miscelaneo Eliminado');
     }
 }
