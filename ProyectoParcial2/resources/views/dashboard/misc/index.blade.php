@@ -102,7 +102,7 @@
                     </tr>
                 @endforeach
             </thead>
-            {{$medicamentos->links()}}
+            {{$miscs->links()}}
         </table>
     </div>
 </body>

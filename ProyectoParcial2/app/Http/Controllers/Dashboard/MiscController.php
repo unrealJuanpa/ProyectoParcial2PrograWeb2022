@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Misc;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreMiscPost;
 
 class MiscController extends Controller
 {
@@ -26,7 +27,7 @@ class MiscController extends Controller
      */
     public function create()
     {
-        echo view('dashboard.misc.create',["misc"=>new Medicamento()]);
+        echo view('dashboard.misc.create',["misc"=>new Misc()]);
     }
 
     /**
