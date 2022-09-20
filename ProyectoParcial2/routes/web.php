@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\MedicamentoController;
 use App\Http\Controllers\Dashboard\MiscController;
 use App\Http\Controllers\Dashboard\ListarmedsclienteController;
@@ -23,7 +22,6 @@ Route::get('/', function () {
 }) -> name('home');
 
 Route::resource('medicamento', MedicamentoController::class);
-Route::resource('category', CategoriesController::class);
 Route::resource('misc', MiscController::class);
 Route::resource('listarmedscliente', ListarmedsclienteController::class);
 Route::resource('listarmisccliente', ListarmiscclienteConstroller::class);
