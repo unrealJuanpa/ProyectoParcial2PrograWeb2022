@@ -15,7 +15,8 @@ class MiscController extends Controller
      */
     public function index()
     {
-        //
+        $miscs=Misc::orderBy('created_at','asc') -> cursorpaginate(3);
+        echo view('dashboard.misc.index',['miscs'=>$miscs]);
     }
 
     /**
@@ -25,7 +26,7 @@ class MiscController extends Controller
      */
     public function create()
     {
-        //
+        echo view('dashboard.misc.create',["misc"=>new Medicamento()]);
     }
 
     /**
@@ -36,7 +37,8 @@ class MiscController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Misc::create($request->validated());
+        return back()->with('status','Medicamento Creado');
     }
 
     /**
