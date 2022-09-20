@@ -3,6 +3,8 @@
 use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\MedicamentoController;
 use App\Http\Controllers\Dashboard\MiscController;
+use App\Http\Controllers\Dashboard\ListarmedsclienteController;
+use App\Http\Controllers\Dashboard\ListarmiscclienteConstroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +25,5 @@ Route::get('/', function () {
 Route::resource('medicamento', MedicamentoController::class);
 Route::resource('category', CategoriesController::class);
 Route::resource('misc', MiscController::class);
+Route::resource('listarmedscliente', ListarmedsclienteController::class);
+Route::resource('listarmisccliente', ListarmiscclienteConstroller::class);
