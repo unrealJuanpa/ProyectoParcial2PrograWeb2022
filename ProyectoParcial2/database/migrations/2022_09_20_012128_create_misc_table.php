@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("manufacturer", 300);
             $table->text("description");
             $table->float("price");
-            $table->int("units");
+            $table->integer("units");
             $table->timestamps();
         });
     }
