@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::resource('medicamento', MedicamentoController::class);
 Route::resource('category', CategoriesController::class);
+Route::resource('misc', CategoriesController::class);
