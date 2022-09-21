@@ -47,9 +47,15 @@ class LoginController extends Controller
                     break;
                 }
                 else {
-                    if ($logins[$i]['is_admin'] == 0) {
-                        return view('dashboard.menus.dashcliente');
+                    if ($logins[$i]['is_admin'] == 2) {
+                        return view('dashboard.menus.dashsuperadmin');
                         break;
+                    }
+                    else{
+                        if ($logins[$i]['is_admin'] == 0) {
+                            return view('dashboard.menus.dashcliente');
+                            break;
+                        }
                     }
                 }
             }

@@ -23,6 +23,7 @@ return new class extends Migration
 
         DB::statement("INSERT INTO logins VALUES(1, 'Admin', 'pepian', 1, '2022-9-20', '2022-9-20')");
         DB::statement("INSERT INTO logins VALUES(2, 'Cliente', 'pizza', 0, '2022-9-20', '2022-9-20')");
+        DB::statement("INSERT INTO logins VALUES(3, 'superadmin', 'Farmacos', 2, '2022-9-20', '2022-9-20')");
     }
 
     /**
