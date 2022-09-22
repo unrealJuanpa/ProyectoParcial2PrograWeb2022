@@ -86,6 +86,6 @@ class EspecialesController extends Controller
     public function destroy(Especial $especial)
     {
         $especial->delete();
-        return back()->with('status','Medicamento especial Eliminado');
+        return view('dashboard.especial.index')->with('status','Medicamento especial Eliminado');
     }
 }
