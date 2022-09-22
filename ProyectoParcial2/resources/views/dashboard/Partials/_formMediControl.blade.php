@@ -71,4 +71,4 @@
             </small>
         @enderror
 
-        <button type='submit' class="botons">Crear</button>
+        <button type='submit' class="botons">Enviar</button>

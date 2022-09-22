@@ -12,10 +12,10 @@
     <title>Actualizar Medicamentos</title>
 </head>
 <body>
-    @include('dashboard.partials.nav-header-main')
-    <form action="{{route('medicamento.update',$medicamento->id)}}" method='post' class="form-register">
+@include('dashboard.partials.nav-header-dashespecial')
+
+    <form action="{{route('especial.update',$especial->id)}}" method='post' class="form-register">
         @method('PUT')
-        @include('dashboard.partials._form')
-    </form>
+        @include('dashboard.partials._formMediControl')
 </body>
 </html>

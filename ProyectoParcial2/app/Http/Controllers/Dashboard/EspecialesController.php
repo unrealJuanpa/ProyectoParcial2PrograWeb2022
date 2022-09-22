@@ -61,7 +61,7 @@ class EspecialesController extends Controller
      */
     public function edit(Especial $especial)
     {
-        //
+        echo view('dashboard.especial.edit', ["especial"=>$especial]);
     }
 
     /**
@@ -71,9 +71,10 @@ class EspecialesController extends Controller
      * @param  \App\Models\Especial  $especial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especial $especial)
+    public function update(StoreEspecialPost $request, Especial $especial)
     {
-        //
+        $especial->update($request->validated());
+        return back()->with('status','Medicamento especial Actualizado');
     }
 
     /**
@@ -84,6 +85,7 @@ class EspecialesController extends Controller
      */
     public function destroy(Especial $especial)
     {
-        //
+        $especial->delete();
+        return back()->with('status','Medicamento especial Eliminado');
     }
 }

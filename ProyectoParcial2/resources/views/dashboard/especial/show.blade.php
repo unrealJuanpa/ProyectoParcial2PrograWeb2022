@@ -12,6 +12,8 @@
     <title>Ver Medicamentos Controlados</title>
 </head>
 <body>
+@include('dashboard.partials.nav-header-dashespecial')
+
     <form action="{{route('especial.store')}}" method='post' class="form-register">
         @csrf
         <h4>Ver Medicamentos Controlados</h4>

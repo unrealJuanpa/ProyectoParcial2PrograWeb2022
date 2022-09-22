@@ -20,6 +20,9 @@
     @endphp
 </head>
 <body>
+
+    @include('dashboard.partials.nav-header-dashespecial')    
+
     <br><br><br>
     <div class="container">
         <a class="btn btn-success" href={{route('especial.create')}}>Crear</a>
