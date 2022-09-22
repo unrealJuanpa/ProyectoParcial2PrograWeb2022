@@ -48,7 +48,7 @@ class LoginController extends Controller
                 }
                 else {
                     if ($logins[$i]['is_admin'] == 2) {
-                        return view('dashboard.medicontrolados.index');
+                        return view('dashboard.especial.index');
                         break;
                     }
                     else{

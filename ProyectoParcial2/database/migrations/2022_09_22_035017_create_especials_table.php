@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('medicontrolados', function (Blueprint $table) {
+        Schema::create('especials', function (Blueprint $table) {
             $table->id();
             $table->string("nombre",255);
             $table->text("descripcion");
             $table->text('slug');
-            $table->text('prescripto_para');
+            $table->text('prescrito_para');
             $table->text('componentes');
             $table->integer("cantidad");
             $table->date("fecha_expiracion");
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medicontrolados');
+        Schema::dropIfExists('especials');
     }
 };

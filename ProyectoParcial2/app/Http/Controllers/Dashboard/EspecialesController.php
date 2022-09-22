@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\MedicamentoControlado;
+use App\Http\Requests\StoreEspecialPost;
+use App\Models\Especial;
 use Illuminate\Http\Request;
 
-class MedicamentosControladosController extends Controller
+class EspecialesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,8 @@ class MedicamentosControladosController extends Controller
      */
     public function index()
     {
-        //
+        $especiales=Especial::orderBy('created_at','asc') -> cursorpaginate(3);
+        echo view('dashboard.especial.index',['especiales'=>$especiales]);
     }
 
     /**
@@ -25,7 +27,7 @@ class MedicamentosControladosController extends Controller
      */
     public function create()
     {
-        //
+        echo view('dashboard.especial.create',["especial"=>new Especial()]);
     }
 
     /**
@@ -34,29 +36,30 @@ class MedicamentosControladosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEspecialPost $request)
     {
-        //
+        Especial::create($request->validated());
+        return back()->with('status','Medicamento Creado');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicamentoControlado  $medicamentoControlado
+     * @param  \App\Models\Especial  $especial
      * @return \Illuminate\Http\Response
      */
-    public function show(MedicamentoControlado $medicamentoControlado)
+    public function show(Especial $especial)
     {
-        //
+        echo view('dashboard.especial.show', ["especial"=>$especial]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicamentoControlado  $medicamentoControlado
+     * @param  \App\Models\Especial  $especial
      * @return \Illuminate\Http\Response
      */
-    public function edit(MedicamentoControlado $medicamentoControlado)
+    public function edit(Especial $especial)
     {
         //
     }
@@ -65,10 +68,10 @@ class MedicamentosControladosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicamentoControlado  $medicamentoControlado
+     * @param  \App\Models\Especial  $especial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MedicamentoControlado $medicamentoControlado)
+    public function update(Request $request, Especial $especial)
     {
         //
     }
@@ -76,10 +79,10 @@ class MedicamentosControladosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicamentoControlado  $medicamentoControlado
+     * @param  \App\Models\Especial  $especial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicamentoControlado $medicamentoControlado)
+    public function destroy(Especial $especial)
     {
         //
     }
